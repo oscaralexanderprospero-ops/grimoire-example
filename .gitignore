@@ -1,0 +1,14 @@
+data/
+imports/
+*.apk
+*.jks
+*.keystore
+.env
+.gradle/
+build/
+app/build/
+local.properties
+
+__pycache__/
+*.pyc
+apk-build-results.json

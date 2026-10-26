@@ -1,0 +1,108 @@
+<!doctype html>
+
+<html lang="en-GB">
+
+<head>
+
+  <meta charset="utf-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'none'; form-action 'self'">
+
+  <meta name="theme-color" content="#2a2620">
+
+  <meta name="mobile-web-app-capable" content="yes">
+
+  <meta name="apple-mobile-web-app-title" content="Grimoire">
+
+  <link rel="manifest" href="manifest.webmanifest">
+
+  <link rel="icon" type="image/svg+xml" sizes="192x192" href="icons/example.svg">
+
+  <link rel="apple-touch-icon" href="icons/example.svg">
+
+  <title>Lattice Age Grimoire</title>
+
+  <link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body>
+
+  <a class="skip" href="#main">Skip to content</a>
+
+  <p class="boundary" id="store-status">Loading…</p>
+
+  <header class="top">
+
+    <a class="brand" href="#/">Lattice Age Grimoire</a>
+
+    <nav class="primary" aria-label="Primary">
+
+      <a href="#/" data-nav="home">Home</a>
+
+      <a href="#/library" data-nav="library">Library</a>
+
+      <a href="#/journal" data-nav="journal">Journal</a>
+
+      <a href="#/create" data-nav="create">Create</a>
+
+    </nav>
+
+    <form class="search" role="search" data-form="search">
+
+      <label for="q" class="vh">Search the grimoire</label>
+
+      <input id="q" name="q" type="search" placeholder="Search entries and journal" autocomplete="off">
+
+      <button type="submit">Search</button>
+
+    </form>
+
+    <div id="undo-slot"></div>
+
+  </header>
+
+  <div class="shell">
+
+    <aside class="sidebar">
+
+      <details id="libpanel">
+
+        <summary>Library</summary>
+
+        <nav id="libtree" aria-label="Library categories"></nav>
+
+      </details>
+
+    </aside>
+
+    <main id="main" tabindex="-1"></main>
+
+  </div>
+
+  <nav class="tabbar" aria-label="App sections">
+
+    <a href="#/" data-nav="home"><span aria-hidden="true">⌂</span>Home</a>
+
+    <a href="#/library" data-nav="library"><span aria-hidden="true">☰</span>Library</a>
+
+    <a href="#/journal" data-nav="journal"><span aria-hidden="true">✎</span>Journal</a>
+
+    <a href="#/create" data-nav="create"><span aria-hidden="true">✦</span>Create</a>
+
+  </nav>
+
+  <div id="toast" role="status" aria-live="polite"></div>
+
+  <script src="data.js"></script>
+
+  <script src="model.js"></script>
+
+  <script src="app.js"></script>
+
+</body>
+
+</html>
+

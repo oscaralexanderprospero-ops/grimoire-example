@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Lattice Age Grimoire phone app: a thin window onto the grimoire on Author's laptop, reached through
+
+     his private Tailscale link (the same pattern as the OMS Control Room app). The phone keeps no grimoire data.
+
+     PREPARED, NOT BUILT: see PHONE-APP.md for the steps that need Author's approval. -->
+
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+
+    package="com.oscarsmagickalauthor.grimoire"
+
+    android:versionCode="4" android:versionName="0.4">
+
+
+
+  <!-- usesCleartextTraffic: the Tailscale link is WireGuard-encrypted end to end even when the
+
+       tailnet has no HTTPS certificates; with certificates enabled, set scheme https and this can go. -->
+
+  <application android:label="Grimoire" android:icon="@mipmap/ic_launcher"
+
+      android:usesCleartextTraffic="false" android:allowBackup="false"
+
+      android:theme="@android:style/Theme.Material.Light.NoActionBar">
+
+    <activity android:name=".MainActivity" android:exported="true" android:launchMode="singleTask"
+
+        android:configChanges="orientation|screenSize|screenLayout|smallestScreenSize|keyboardHidden|uiMode">
+
+      <intent-filter>
+
+        <action android:name="android.intent.action.MAIN" />
+
+        <category android:name="android.intent.category.LAUNCHER" />
+
+      </intent-filter>
+
+      <!-- grimoire://pair?c=CODE (optional one-tap pairing link) -->
+
+      <intent-filter>
+
+        <action android:name="android.intent.action.VIEW" />
+
+        <category android:name="android.intent.category.DEFAULT" />
+
+        <category android:name="android.intent.category.BROWSABLE" />
+
+        <data android:scheme="grimoire" />
+
+      </intent-filter>
+
+    </activity>
+
+  </application>
+
+</manifest>
+
+
+
